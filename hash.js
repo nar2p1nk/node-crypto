@@ -18,3 +18,7 @@ function hasher(word){
 }
 
 hasher(word)
+
+// tho the hash is too predictable as the hash is the same everytime
+// this brings us to HMAC
+
