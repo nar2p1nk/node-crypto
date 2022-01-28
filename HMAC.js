@@ -1,7 +1,13 @@
+// HMAC stands for Hash-based Message Authentication Code, and
+// is a process for applying a hash algorithm to both data
+// and a secret key that results in a single final hash
 const {randomBytes,createHmac,createHash} = require('crypto');
 
 const word = 'ladylikely';
+
+// the secret keys
 const stagkey = 'prick';
+// this one is randomzied for each hash to ensure a unique hash everytime
 const randomizedKey = randomBytes(20);
 
 
@@ -19,3 +25,6 @@ function HMACed(word,stagkey,randomizedKey){
 }
 
 HMACed(word, stagkey,randomizedKey)
+
+// the flaw to HMAC is that there is no way to decrypt the hash
+// and finally we have ciphers
